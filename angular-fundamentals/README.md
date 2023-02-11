@@ -24,10 +24,18 @@ For example:
 `<li *ngFor="let course of courses">`
 
 
-3- Dependency Injection: 
+4- Dependency Injection: 
 
-It comes for free with Angular. We have to one step which is in @NgModule inside 
-providers param adding a reference to the desired Dependency.
+It comes for free with Angular. We have to do one more step which is in @NgModule inside `providers` param adding a reference to the desired Dependency.
 For example:
 
 `providers: [CoursesService]`
+
+
+5- Create a new service using Angular CLI which will add annotation `@Injectable()` to this service. This is being added if the service depends on another dependency 
+
+`ng g s email` 
+
+g:       Stands for generating. 
+s:       Stands for service.
+email:   Stands for service's name.
