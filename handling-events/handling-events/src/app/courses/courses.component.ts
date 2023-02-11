@@ -5,13 +5,14 @@ import { Component } from '@angular/core';
   template: `
   <button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)">Save</button>
   <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'red' : 'grey'">Cancel</button>
-  <input (keyup.enter)="onKeyUp()"/> 
-  `,
+  <input [(ngModel)]="email" (keyup.enter)="onKeyUp()"/> 
+`,
   styleUrls: ['./courses.component.css']
 })
 
 export class CoursesComponent {
   isActive = false;
+  email = "me@example.com"
 
   onSave($event : any){
     // Stop click bubbling
@@ -19,7 +20,13 @@ export class CoursesComponent {
     console.log("Button was clicked ", $event)
   }
 
+  onKeyUp1(email:any){
+    // $event.target.value
+    console.log("ENTER was pressed, email: ",email)
+  }
+  
   onKeyUp(){
-    console.log("ENTER was pressed ")
+    // $event.target.value
+    console.log("ENTER was pressed, email: ",this.email)
   }
 }
