@@ -5,3 +5,13 @@
 `npm install bootstrap --save`
 
 save: Stands for add a dep of bootstrap in the current project.
+
+
+2- Class binding:
+
+`[class.active]="isActive"`
+
+
+3- Style binding:
+
+`[style.backgroundColor]="red"`
