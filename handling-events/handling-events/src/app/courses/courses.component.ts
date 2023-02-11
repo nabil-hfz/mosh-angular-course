@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-courses',
   template: `
-  <button class="btn btn-primary" [class.active]="isActive">Save</button>
+  <button class="btn btn-primary" [class.active]="isActive" (click)="onSave($event)">Save</button>
   <button class="btn btn-primary" [style.backgroundColor]="isActive ? 'red' : 'grey'">Cancel</button>
 
   `,
@@ -12,4 +12,7 @@ import { Component } from '@angular/core';
 
 export class CoursesComponent {
   isActive = false;
+  onSave($event : any){
+    console.log("Button was clicked ", $event)
+  }
 }
