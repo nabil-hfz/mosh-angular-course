@@ -1,3 +1,4 @@
+import { CoursesService } from './courses.service';
 import { Component } from '@angular/core';
 
 
@@ -16,8 +17,10 @@ import { Component } from '@angular/core';
 })
 export class CoursesComponent {
     title = " to Angular course";
-    courses = ["course1", "course2", "course3"];
-
+    courses;
+    constructor(private service: CoursesService){
+        this.courses = service.getCourse();
+    }
     getTitle(): string {
         return this.title;
     }
